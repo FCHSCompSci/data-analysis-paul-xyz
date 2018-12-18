@@ -1,4 +1,8 @@
+import matplotlib.pyplot as plt
 import csv
+
+x = []
+y = []
 
 filename = 'bundesliga_team.csv'
 with open(filename) as f:
@@ -6,7 +10,9 @@ with open(filename) as f:
     header_row = next(reader)
     for index, column_header in enumerate(header_row):
         print(index, column_header)
-    vals = []
     for row in reader:
-        vals.append(row[2])
-        print(vals)
+        x.append(row[0])
+        y.append(row[1])
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
