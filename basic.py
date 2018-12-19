@@ -11,8 +11,10 @@ with open(filename) as f:
     for index, column_header in enumerate(header_row):
         print(index, column_header)
     for row in reader:
-        x.append(row[0])
-        y.append(row[1])
-plt.xlabel('x')
-plt.ylabel('y')
+        y.append(row[11])
+        x.append(row[1])
+
+plt.ylabel('Red Card #')
+plt.xlabel('Team Name')
+plt.bar(x,y)
 plt.show()
